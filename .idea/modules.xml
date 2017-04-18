@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/posman/posman.iml" filepath="$PROJECT_DIR$/posman/posman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/posman_license1.iml" filepath="$PROJECT_DIR$/posman_license1.iml" />
+    </modules>
+  </component>
+</project>

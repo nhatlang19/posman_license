@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/menu/setting.xml",
+        "source": "/Volumes/Data/Wind/android_projects/posman_license1/posman/src/main/res/menu/setting.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/menu/main.xml",
+        "source": "/Volumes/Data/Wind/android_projects/posman_license1/posman/src/main/res/menu/main.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/menu/posmenu.xml",
+        "source": "/Volumes/Data/Wind/android_projects/posman_license1/posman/src/main/res/menu/posmenu.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/menu/order.xml",
+        "source": "/Volumes/Data/Wind/android_projects/posman_license1/posman/src/main/res/menu/order.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/menu/table.xml",
+        "source": "/Volumes/Data/Wind/android_projects/posman_license1/posman/src/main/res/menu/table.xml"
+    }
+]

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item><layer-list>
+            <item android:bottom="0dp" android:left="1dp" android:right="1dp" android:top="0dp"><shape>
+                    <stroke android:width="1dp" android:color="#000000" />
+
+                    <solid android:color="#dddddd" />
+
+                    <padding android:bottom="11dp" android:left="3dp" android:right="3dp" android:top="12dp" />
+                </shape></item>
+            <item><bitmap android:gravity="right" android:src="@drawable/spinner_arrow" />
+            </item>
+        </layer-list></item>
+
+</selector>

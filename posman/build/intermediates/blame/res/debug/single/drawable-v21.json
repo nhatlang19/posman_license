@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/drawable-v21/abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/drawable-v21/notification_action_background.xml",
+        "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/drawable-v21/abc_edit_text_material.xml",
+        "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/drawable-v21/abc_edit_text_material.xml"
+    }
+]
