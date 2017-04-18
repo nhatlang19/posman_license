@@ -39,7 +39,7 @@ public class LicenseUtils {
 
     public String createLicenseKey(String imei) {
         int decimal = Integer.valueOf(imei);
-        return decimal + salt + "";
+        return (decimal + (salt * 2) + 1) + "";
     }
 
     public String decodeLicenseKey(String licenseKey) {
