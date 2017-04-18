@@ -60,14 +60,6 @@
         "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/color/abc_tint_default.xml"
     },
     {
-        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_light.xml",
-        "source": "/Users/Luan_Lapy/.android/build-cache/5578bb18143a669cd788dc9706a95f9b241b09dd/output/res/color/common_google_signin_btn_text_light.xml"
-    },
-    {
-        "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/color/common_google_signin_btn_text_dark.xml",
-        "source": "/Users/Luan_Lapy/.android/build-cache/5578bb18143a669cd788dc9706a95f9b241b09dd/output/res/color/common_google_signin_btn_text_dark.xml"
-    },
-    {
         "merged": "/Volumes/Data/Wind/android_projects/posman_license1/posman/build/intermediates/res/merged/debug/color/abc_primary_text_material_dark.xml",
         "source": "/Users/Luan_Lapy/.android/build-cache/a6aa0ef05953f035115029aadcc926d3169e4881/output/res/color/abc_primary_text_material_dark.xml"
     },
