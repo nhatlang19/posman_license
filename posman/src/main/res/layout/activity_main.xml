@@ -17,7 +17,7 @@
         android:layout_centerInParent="true"
         android:orientation="vertical"
         android:padding="10dp"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/imageView1"
@@ -293,39 +293,6 @@
                 android:textSize="11dp" />
 
         </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:padding="10dp"
-        android:id="@+id/linearLayoutSetupFirst"
-        >
-
-        <TextView
-            android:id="@+id/tvLicenseLabel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Your license key:" />
-
-        <TextView
-            android:id="@+id/tvLicenseValue"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="123456"
-            android:textAlignment="center"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnNextSetup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Next" />
-
 
     </LinearLayout>
 

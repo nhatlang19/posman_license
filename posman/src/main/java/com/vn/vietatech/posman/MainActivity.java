@@ -13,11 +13,9 @@ import android.view.View.OnKeyListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.vn.vietatech.api.async.LoginAsync;
-import com.vn.vietatech.api.async.UpdateTimeAsync;
 import com.vn.vietatech.model.Cashier;
 import com.vn.vietatech.utils.LicenseUtils;
 import com.vn.vietatech.utils.UserUtil;
@@ -31,12 +29,8 @@ public class MainActivity extends AppCompatActivity {
     EditText txtLicense;
     EditText txtPasscode;
 
-    TextView tvLicenseValue;
-    Button btnNextSetup;
-
     LinearLayout linearLayoutLicense;
     LinearLayout linearLayoutLogin;
-    LinearLayout linearLayoutSetupFirst;
 
     MyApplication globalVariable;
     private Context context = this;
@@ -58,32 +52,26 @@ public class MainActivity extends AppCompatActivity {
 
         linearLayoutLicense = (LinearLayout) findViewById(R.id.linearLayoutLicense);
         linearLayoutLogin = (LinearLayout) findViewById(R.id.linearLayoutLogin);
-        linearLayoutSetupFirst = (LinearLayout) findViewById(R.id.linearLayoutSetupFirst);
 
         txtUserName = (EditText) findViewById(R.id.txtUsername);
         txtPassword = (EditText) findViewById(R.id.txtPassword);
         txtLicense = (EditText) findViewById(R.id.txtLicense);
         txtPasscode = (EditText) findViewById(R.id.txtPasscode);
 
-        btnNextSetup = (Button) findViewById(R.id.btnNextSetup);
-        tvLicenseValue = (TextView) findViewById(R.id.tvLicenseValue);
-
         licenseUtils = LicenseUtils.getInstance(context);
 
         try {
-            if(licenseUtils.readSetupFirst() == null) {
-                setupFirst();
-            } else if(licenseUtils.read() == null) {
-                linearLayoutLicense.setVisibility(View.VISIBLE);
-                linearLayoutLogin.setVisibility(View.INVISIBLE);
-                linearLayoutSetupFirst.setVisibility(View.INVISIBLE);
+            if(licenseUtils.read() == null) {
+                linearLayoutLicense.setVisibility(LinearLayout.VISIBLE);
+                linearLayoutLogin.setVisibility(LinearLayout.INVISIBLE);
 
                 String imei = Utils.getIMEI(context);
                 txtPasscode.setText(imei);
+                String license = licenseUtils.createLicenseKey(imei);
+                System.out.println("license:" + license);
             } else {
-                linearLayoutLicense.setVisibility(View.INVISIBLE);
-                linearLayoutLogin.setVisibility(View.VISIBLE);
-                linearLayoutSetupFirst.setVisibility(View.INVISIBLE);
+                linearLayoutLicense.setVisibility(LinearLayout.INVISIBLE);
+                linearLayoutLogin.setVisibility(LinearLayout.VISIBLE);
             }
 
             Cashier cashier = UserUtil.read(this);
@@ -92,21 +80,6 @@ public class MainActivity extends AppCompatActivity {
             }
         } catch (IOException e1) {
         }
-
-        btnNextSetup.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                linearLayoutLicense.setVisibility(View.VISIBLE);
-                linearLayoutLogin.setVisibility(View.INVISIBLE);
-                linearLayoutSetupFirst.setVisibility(View.INVISIBLE);
-
-                try {
-                    licenseUtils.writeSetupFirst();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
 
         txtPassword.setOnKeyListener(new OnKeyListener() {
 
@@ -146,24 +119,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void setupFirst()
-    {
-        linearLayoutLicense.setVisibility(View.INVISIBLE);
-        linearLayoutLogin.setVisibility(View.INVISIBLE);
-        String imei = Utils.getIMEI(context);
-        txtPasscode.setText(imei);
-        String licenseKey = licenseUtils.createLicenseKey(imei);
-        tvLicenseValue.setText(licenseKey);
-    }
-
     private void activate() {
         String licenseKey = txtLicense.getText().toString();
         if(licenseKey.trim().length() > 0 && licenseUtils.checkLicenseKey(licenseKey)) {
             try {
                 licenseUtils.write(licenseKey);
-                linearLayoutLicense.setVisibility(View.INVISIBLE);
-                linearLayoutLogin.setVisibility(View.VISIBLE);
-                linearLayoutSetupFirst.setVisibility(View.INVISIBLE);
+                linearLayoutLicense.setVisibility(LinearLayout.INVISIBLE);
+                linearLayoutLogin.setVisibility(LinearLayout.VISIBLE);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -182,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        new UpdateTimeAsync(context).execute();
+//        new UpdateTimeAsync(context).execute();
         new LoginAsync(context, getApplication()).execute(username, password);
     }
 

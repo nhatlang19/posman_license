@@ -14,7 +14,6 @@ import java.util.Properties;
 public class LicenseUtils {
     private static LicenseUtils instance = null;
     private static String FILENAME = "LicenseKey";
-    private static String FILENAME_SETUP = "Setup";
     private final int salt = 23102014;
     Context context;
 
@@ -40,12 +39,6 @@ public class LicenseUtils {
     public String createLicenseKey(String imei) {
         int decimal = Integer.valueOf(imei);
         return (decimal + (salt * 2) + 1) + "";
-    }
-
-    public String decodeLicenseKey(String licenseKey) {
-        int decimal = Integer.valueOf(licenseKey) - salt;
-
-        return String.valueOf(decimal);
     }
 
     @SuppressLint("NewApi")
@@ -80,38 +73,4 @@ public class LicenseUtils {
         }
         return null;
     }
-
-    @SuppressLint("NewApi")
-    public void writeSetupFirst()
-            throws IOException {
-        File dir = new File(context.getFilesDir().getPath() + "/"
-                + context.getResources().getString(R.string.app_folder));
-        if (!dir.exists()) {
-            dir.mkdirs();
-        }
-        File file = new File(dir, FILENAME_SETUP);
-        Properties props = new Properties();
-        props.setProperty("isSetupped", "1");
-
-        FileWriter writer = new FileWriter(file);
-        props.store(writer, "isSetupped");
-        writer.close();
-    }
-
-    @SuppressLint("NewApi")
-    public String readSetupFirst() throws IOException {
-        File file = new File(context.getFilesDir().getPath() + "/"
-                + context.getResources().getString(R.string.app_folder) + "/"
-                + FILENAME_SETUP);
-        if (file.exists() && file.isFile()) {
-            FileReader reader = new FileReader(file);
-            Properties props = new Properties();
-            props.load(reader);
-
-            return props.getProperty("isSetupped");
-        }
-        return null;
-    }
-
-
 }
