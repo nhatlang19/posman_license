@@ -47,7 +47,7 @@ public class AbstractAPI extends AsyncTask<String, String, String> {
 
         SERVER_IP = SettingUtil.read(mContext).getServerIP();
         NAMESPACE = "http://tempuri.org/";
-        URL = "http://" + SERVER_IP + "/V6BOService/V6BOService.asmx";
+        URL = "http://" + SERVER_IP + "/V6BOServiceCombo/V6BOService.asmx";
 
         if (!Utils.isNetworkAvailable(context)) {
             throw new Exception("No Internet Connection");
